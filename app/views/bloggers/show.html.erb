@@ -1,0 +1,6 @@
+<h1> <%= @blogger.name %> </h1>
+<hr>
+<p> <%= @blogger.bio %> </p>
+<hr>
+<p> Total Likes: <%= @blogger.posts.map{|post| post.likes}.sum %> </p> <br>
+<p> <%= link_to("Featured Post", @blogger.posts.max_by{|post| post.likes}) %> </p>

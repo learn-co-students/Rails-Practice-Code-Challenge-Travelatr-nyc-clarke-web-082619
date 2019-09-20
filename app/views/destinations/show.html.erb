@@ -1,0 +1,18 @@
+<h1> <%= @destination.name %> </h1><br>
+<h2> <%= @destination.country %> </h2>
+Most Recent Posts:
+<hr>
+<% @most_recent_posts.each do |post| %>
+    <p> <%= link_to(post.title, post) %> <p>
+<% end %>
+<hr>
+Featured Post: <% if @featured_post %>
+                    <%= link_to(@featured_post.title, @featured_post) %><br>
+                <% else %>
+                    No Featured Post <br>
+                <% end %>
+Average Age: <% if !@average_age.nan? %> 
+                <%= @average_age %>
+            <% else %>
+                No Average Age
+            <% end %>
