@@ -1,0 +1,8 @@
+
+<h1>Name: <%= @blogger.name %></h1>
+<p>Age:<%= @blogger.age %></p>
+<p>Bio: <%= @blogger.bio %></p>
+<p>Total likes: <%= @total_likes %></p>
+<p>Most liked post:
+    <%= link_to @most_liked_post.title, controller: "posts", action: "show", id: @most_liked_post.id%>, this post got <%= @most_liked_post.likes%> like(s).
+</p>

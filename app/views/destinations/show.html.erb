@@ -1,0 +1,24 @@
+<h1>Destination Name: <%= @destination.name %></h1>
+</h2>Destination Country: <%= @destination.country %> </h2>
+
+<p>
+    <% if @recent_posts == [] %>
+        No recent posts for this destination.
+    <%else %>
+        5 most recent blog posts: 
+        <% @recent_posts.each do |post| %>
+         <%= link_to post.title, controller: "posts", action: "show", id: post.id %><br>
+        <% end %>
+    <% end %>
+</p>
+
+<p>Most liked post: 
+    <% if @most_liked_post == nil %>
+        There's no post about this destination.
+    <% else %>
+        <%= link_to @most_liked_post.title , controller: "posts", action: "show", id: @most_liked_post.id %> (<%= @most_liked_post.likes %> likes)
+    <% end %>
+    
+</p>
+
+<p>average age of the bloggers who wrote about this destination is: <%= @average_age %></p>

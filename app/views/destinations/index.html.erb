@@ -1,0 +1,3 @@
+<% @destinations.each do |destination| %>
+    <%= link_to destination.name, controller: "destinations", action: "show", id: destination.id%><br>
+<% end %>

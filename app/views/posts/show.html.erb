@@ -1,0 +1,19 @@
+<h1><%= @post.title %></h1>
+
+<p>Blogger:
+    <%= link_to @post.blogger.name, controller: "bloggers", action: "show", id: @post.blogger_id %>
+</p>
+
+<p>Destination:
+    <%= link_to @post.destination.name, controller: "destinations", action: "show", id: @post.destination_id %>
+</p>
+
+<p><%= @post.content%></p>
+
+<% if @post.likes == nil %>
+    <p>0 like</p>
+<% else %>
+    <p><%= @post.likes %> likes.</p>
+<% end %>
+
+<%= button_to "Like", action="#{@post.id}/increment_likes"%>
