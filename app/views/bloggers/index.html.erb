@@ -1,0 +1,3 @@
+<% @bloggers.each do |blogger| %>
+    <%= link_to blogger.name, controller: "bloggers", action: "show", id: blogger.id %> <br> 
+<% end %>
