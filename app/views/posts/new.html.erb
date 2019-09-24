@@ -1,0 +1,28 @@
+<h1>New Post Form </h1>
+
+<%= form_for @post do |f| %>
+
+    <div id="error_explanation">
+        <% if flash[:errors] %>
+            <ul>
+                <% flash[:errors].each do |error| %>
+                    <li><%= error %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+
+    <%= f.label :content %>
+    <%= f.text_field :content %><br>
+
+    <%= f.label :blogger_id %>
+    <%= f.collection_select(:blogger_id, Blogger.all, :id, :name) %><br>
+
+    <%= f.label :destination_id %>
+    <%= f.collection_select(:destination_id, Destination.all, :id, :name) %><br>
+
+    <%= f.submit %>
+<% end %>
