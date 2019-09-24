@@ -1,0 +1,6 @@
+<h1>Edit Destination</h1>
+<%= form_for @destination do |f|%>
+    <li>Name: <%= f.text_field :name %></li>
+    <li>Country: <%= f.text_field :country %></li>
+    <%= f.submit "Update Destination"%>
+<%end%>

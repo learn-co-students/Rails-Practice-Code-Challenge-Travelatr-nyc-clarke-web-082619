@@ -1,0 +1,4 @@
+<h1>Destinations Index </h1>
+<% @destinations.each do |destination| %>
+<li><%= link_to destination.name_and_country, destination_path(destination)%></li>
+<% end %>
