@@ -1,0 +1,25 @@
+<h1>New Blogger Form</h1>
+
+<%= form_for @blogger do |f| %>
+    
+    <div id="error_explanation">
+        <% if flash[:errors] %>
+            <ul>        
+                <% flash[:errors].each do |error| %>
+                    <li><%= error %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+
+    <%= f.submit %>
+<% end %>
