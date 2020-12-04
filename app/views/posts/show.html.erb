@@ -1,0 +1,7 @@
+<h1><%= @post.title%></h1>
+<ul style="margin-left: 40px"> By: <%=link_to @post.blogger.name, blogger_path(@post.blogger)%></ul>
+<ul style="margin-left: 40px">Destination: <%=link_to @post.destination.name_and_country, destination_path(@post.destination)%></ul>
+<ul style="margin-left: 40px">Likes: <%=@post.likes%></ul>
+<p><%=@post.content %></p>
+
+<%= button_to "Like This Post", { action: "like", id: @post.id }, method: :patch %>
